@@ -11,7 +11,7 @@ url = ""
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--incognito")
 
-chrom_path = r"/Users/james/Downloads/chromedriver"
+chrom_path = r""
 driver = webdriver.Chrome(chrom_path, chrome_options=chrome_options)
 # driver.set_window_size(1924, 1050) # choose a resolution big enough
 
