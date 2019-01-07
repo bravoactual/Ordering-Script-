@@ -6,7 +6,7 @@ from time import sleep
 from selenium.webdriver.chrome import service
 import re
 
-url = "https://www.dutchie.com/dispensaries/cannabal-city-collective-los-angeles/menu"
+url = ""
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--incognito")
