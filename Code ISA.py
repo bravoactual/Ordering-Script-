@@ -6,12 +6,12 @@ from time import sleep
 from selenium.webdriver.chrome import service
 import re
 
-url = "https://www.dutchie.com/dispensaries/cannabal-city-collective-los-angeles/menu"
+url = ("Url")
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--incognito")
 
-chrom_path = r"/Users/james/Downloads/chromedriver"
+chrom_path = r("Driver Path")
 driver = webdriver.Chrome(chrom_path, chrome_options=chrome_options)
 # driver.set_window_size(1924, 1050) # choose a resolution big enough
 
