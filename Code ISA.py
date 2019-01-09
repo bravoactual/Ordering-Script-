@@ -6,28 +6,28 @@ from time import sleep
 from selenium.webdriver.chrome import service
 import re
 
-url = ""
+url = "https://www.dutchie.com/dispensaries/cannabal-city-collective-los-angeles/menu"
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--incognito")
 
-chrom_path = r""
+chrom_path = r"/Users/james/Downloads/chromedriver"
 driver = webdriver.Chrome(chrom_path, chrome_options=chrome_options)
 # driver.set_window_size(1924, 1050) # choose a resolution big enough
 
 driver.get(url)
-sleep(3)
+sleep(4)
 
 # navigate to the specified product : just add the name
 driver.find_element_by_partial_link_text('3C INDICA HOUSE MIX').click()
-sleep(3)
+sleep(5)
 
 # select the desired 1/2 OZ
 weight_css_selector = '.product-modal__AddToCartContainer-sc-1xb83zk-9 > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > span:nth-child(2)'
 driver.find_element_by_css_selector(weight_css_selector).click()
 desired_weight_css_selector = '.product-modal__AddToCartContainer-sc-1xb83zk-9 > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > span:nth-child(2) > select:nth-child(1) > option:nth-child(3)'
 driver.find_element_by_css_selector(desired_weight_css_selector).click()
-sleep(2)
+sleep(6)
 #######
 # select the desired quantity
 quantity_css_selector = '.product-modal__AddToCartContainer-sc-1xb83zk-9 > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > span:nth-child(2)'
@@ -46,12 +46,11 @@ driver.find_element_by_css_selector('body > div:nth-child(22) > div > div > div.
 sleep(2)
 
 # click on cart
-driver.find_element_by_css_selector(
-    '#navigation-container > div > div.navigation__UserCartContainer-sc-18zpigd-9.jqRiWr.sc-bwzfXH.kkVFCe.sc-bdVaJa.iHZvIS > div.icon__CartIcon-sc-4qy5kh-0.eoUoeu.sc-bdVaJa.iHZvIS').click()
+driver.find_element_by_css_selector('#navigation-container > div > div.navigation__UserCartContainer-sc-18zpigd-9.jqRiWr.sc-bwzfXH.kkVFCe.sc-bdVaJa.iHZvIS > div.icon__CartIcon-sc-4qy5kh-0.eoUoeu.sc-bdVaJa.iHZvIS').click()
 sleep(2)
 # proceed to checkout
 driver.find_element_by_xpath('//button[text()="Proceed to Checkout - $"]').click()
-sleep(2)
+sleep(3)
 # Checkout as guest
 driver.find_element_by_xpath('/html/body/div[6]/div/div/div[5]/a').click()
 sleep(4)
@@ -62,14 +61,19 @@ sleep(4)
 First_name_css_selector = 'input.text-input-k2ughi-0:nth-child(1)'
 First_name = driver.find_element_by_css_selector(First_name_css_selector)
 First_name.send_keys('type first name here')
+Sleep(5)
+
 # filling last name
 Last_name_css_selector = 'input.cfxgXT:nth-child(2)'
 Last_name = driver.find_element_by_css_selector(Last_name_css_selector)
 Last_name.send_keys('type last name here')
+sleep(5)
+
 # filling Phone number
 Phone_nu_css_selector = '.text-input-k2ughi-0-Component'
 Phone_nu = driver.find_element_by_css_selector(Phone_nu_css_selector)
 Phone_nu.send_keys('1234567891 ')
+sleep(5)
 # Birth day
 month_xpath = '//*[@id="top-scroll-container"]/div[2]/div/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[1]/span/select'
 select_month = Select(driver.find_element_by_xpath(month_xpath))
@@ -80,6 +84,9 @@ select_day.select_by_value('17')
 year_xpath = '//*[@id="top-scroll-container"]/div[2]/div/div[1]/div[1]/div[2]/div[2]/div[3]/div[2]/div[3]/span/select'
 select_year = Select(driver.find_element_by_xpath(year_xpath))
 select_year.select_by_value('2018')
+sleep(5)
+
 # choosing Credit
 choosing_cash_box_xpath = '//*[@id="top-scroll-container"]/div[2]/div/div[1]/div[1]/div[4]/div[2]/div/div[1]/label[2]/input'
 driver.find_element_by_xpath(choosing_cash_box_xpath).click()
+sleep(2)
